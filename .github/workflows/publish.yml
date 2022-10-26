@@ -40,6 +40,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: gh api /users/${{ github.repository_owner }}/packages/npm/npm-publish-and-rest/versions | jq
+      - run: gh api /users/${{ github.repository_owner }}/packages/npm/npm-publish-and-rest/versions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
