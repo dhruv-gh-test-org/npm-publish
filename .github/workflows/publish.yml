@@ -36,8 +36,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
 
-      - name: Trigger npm-install workflow
-        if: ${{ env.GITHUB_TOKEN != null }}
-        run: gh api repos/${{ github.repository_owner }}/npm-install/dispatches <<< '{"event_type":"build"}' --input -
+      - run: gh api /users/${{ github.repository_owner }}/packages/npm/npm-publish-and-rest/versions
         env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
