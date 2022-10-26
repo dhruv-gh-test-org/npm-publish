@@ -38,8 +38,8 @@ jobs:
 
       - run: gh api /users/${{ github.repository_owner }}/packages?package_type=npm | jq
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}x
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: gh api /users/${{ github.repository_owner }}/packages/npm/npm-publish-and-rest/versions
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}x
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
