@@ -36,7 +36,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
 
-      - run: gh api /users/${{ github.repository_owner }}/packages?package_type=npm
+      - run: gh api /users/${{ github.repository_owner }}/packages?package_type=npm | jq
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
